@@ -7,9 +7,9 @@ public class Corretor {
     private String nome;
     private int matricula;
     private float metaMensal;
-    private static HashMap<Integer, Float> vendasMes = new HashMap<>();
+    private HashMap<Integer, Float> vendasMes = new HashMap<>();
     private Endereco endResidencial;
-    private static float totalVendido;
+    private float totalVendido;
 
 
     //Método Principal --> CONSTRUTOR (Padrão e Sobrecarregado)
@@ -47,7 +47,7 @@ public class Corretor {
     public void setEndResidencial(Endereco endResidencial) {
         this.endResidencial = endResidencial;
     }
-    public static HashMap<Integer, Float> getVendasMes() {
+    public HashMap<Integer, Float> getVendasMes() {
         return vendasMes;
     }
 
@@ -65,7 +65,7 @@ public class Corretor {
 
 
     //Método estático "Total Vendido"
-    public static float mostrarTotalVendido() {
+    public float mostrarTotalVendido() {
         for (int i = 1; i <= vendasMes.size(); i++) {
             float valor = vendasMes.get(i);
             totalVendido = totalVendido + valor;
@@ -85,8 +85,6 @@ public class Corretor {
     }
 
     public String statusCorretor() {
-        return "Nome: " + getNome() + "\nMatricula: " + getMatricula() + "\nMeta Mensal: " + getMetaMensal() + "\nUltima Venda: " + this.vendasMes.get(this.vendasMes.size()) + "\nTotal Vendido: " + mostrarTotalVendido();
+        return "Nome: " + getNome() + "\nMatricula: " + getMatricula() + "\nMeta Mensal: " + getMetaMensal() + "\nUltima Venda: " + vendasMes.get(vendasMes.size()) + "\nTotal Vendido: " + mostrarTotalVendido();
     }
-
-
 }
