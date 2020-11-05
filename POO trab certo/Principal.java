@@ -57,6 +57,7 @@ public class Principal {
                         System.out.println("========== CORRETOR N° " + (i + 1) + " ==========");
                         System.out.println(c[i].statusCorretor());
                         System.out.println("=======================================");
+                        System.out.println("Total de vendas: " + Corretor.mostrarTotalVendido());
                     }
 
                     break;
